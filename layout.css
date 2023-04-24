@@ -1,0 +1,66 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.6rem;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+body {
+  display: flex; /* otetaan flex käyttöön vanhemmassa */
+  flex-direction: row; /* määritellään flexin suunta joko row(rivi) tai sarake(column) */
+  flex-wrap: wrap; /* vanhemman lapset voivat rivittyä (allekkain) */
+}
+body > * {
+  flex-grow: 1; /* jos flex-grow on lapsissa sama --> lapset yhtä leveitä */
+  flex-basis: 0; /* lapsen minimileveys*/
+}
+
+section {
+  color: lawngreen;
+  flex-basis: 0;
+}
+li {
+  background-color: brown;
+  padding: 1rem;
+  font-size: 2rem;
+  margin-block-end: 1rem;
+  margin-block-start: 1rem;
+  border-radius: 0 0 2rem 0;
+}
+li:nth-child(even) {
+  background: lightsalmon;
+  color: black;
+}
+
+.rightside {
+  flex-grow: 1.3;
+  padding: 1rem;
+}
+.leftside {
+  padding: 1rem;
+  flex-grow: 2;
+}
+
+.leftside li:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+
+/* Luokassa tehty
+
+muotoillaan sectionit rinnakkain flexin avulla
+*/
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.parent > * {
+  flex-grow: 1; /* suhteita yhden suhde nönnönööhön */
+  flex-basis: 0;
+}
+.parent .parillinen {
+  flex-grow: 2;
+}
